@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissors</title>
+   
+</head>
+
+<body>
+	<h1>Rock Paper Scissors</h1>
+	<script>
+
+	var userChoice = prompt("Rock, paper or scissors?");
+	var computerChoice = Math.floor(Math.random() * 3);
+
+	if (computerChoice == 0) {
+		computerChoice = "rock";
+	} else if (computerChoice == 1) {
+		computerChoice = "paper";
+	} else {
+		computerChoice = "scissors";
+	};
+
+	console.log("user plays " + userChoice);
+	console.log("computer plays " + computerChoice);
+
+	var compare = function(choice1, choice2) {
+		if (choice1 == choice2) {
+			return "tie";
+		} else if (choice1 == "rock") {
+			if (choice2 == "scissors") {
+				return "rock wins";
+			} else {
+				return "paper wins";
+			}
+		} else if (choice1 == "paper") {
+			if (choice2 == "rock") {
+				return "paper wins";
+			} else {
+				return "scissors wins";
+			}
+		} else if (choice1 == "scissors") {
+			if (choice2 == "rock") {
+				return "rock wins";
+			} else {
+				return "scissors wins";
+			}
+		}
+	};
+
+	console.log(compare(userChoice, computerChoice));
+
+	</script>
+</body>
+</html>
