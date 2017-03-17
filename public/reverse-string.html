@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Reverse String</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+
+		var str = prompt('Enter text');
+
+		function reverseString(str) {
+			var reverseStr = '';
+
+			for (var i = str.length; i >= 0; i--) {
+				reverseStr += str.slice(i - 1, i);
+			};
+
+			return reverseStr;
+		}
+
+		console.log(reverseString(str));
+	</script>
+</body>
+</html>
