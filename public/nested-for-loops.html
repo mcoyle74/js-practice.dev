@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>For Loop Practice</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+
+		for (var i = 0; i <= 10; i++) {
+			var str = '';
+			for (var j = i; j > 0; j--) {
+				if (i == 10) {
+					str += '0';
+				} else {
+					str += i.toString();
+				}
+			}
+			if (str !== '') {
+				console.log(str);
+			}
+		}
+	</script>
+</body>
+</html>
