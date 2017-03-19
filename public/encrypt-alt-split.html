@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Encryption - Alternating Split</title>
+</head>
+<body>
+	<script type="text/javascript">
+		"use strict";
+
+		function encrypt(text) {
+			var even = '', odd = '';
+			for (var i = 0; i < text.length; i++) {
+				(i % 2 == 0) ? even += text.charAt(i) : odd += text.charAt(i);
+			}
+			return odd + even;
+		}
+	</script>
+</body>
+</html>
