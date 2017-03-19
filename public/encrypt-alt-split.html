@@ -13,6 +13,10 @@
 		function encrypt(text, n) {
 			if (n <= 0) {
 				return text;
+			} else if (text === '') {
+				return '';
+			} else if (text === null) {
+				return null;
 			}
 
 			for (var i = 0; i < n; i++) {
@@ -24,15 +28,35 @@
 					str += text.charAt(k);
 				}
 				text = str;
-			};
+			}
 
 			return text;
 		}
 
-		for (var l = 0; l < 10; l++) {
-			console.log('test ' + l + ': ' + encrypt(test, l));
-			console.log('test ' + l + ': ' + encrypt(testB, l));
+		function decrypt(text, n) {
+
+			if (n <= 0) {
+				return text;
+			}  else if (text === '') {
+				return '';
+			} else if (text === null) {
+				return null;
+			}
+
+			return text;
 		}
+
+		// var test1 = '01';
+		// var test2 = '012';
+		// var test3 = '0123';
+		
+
+		// for (var m = 0; m < 100; m++) {
+		// 	console.log('test 1 ' + encrypt(test1, 2));
+		// 	console.log('test 2 ' + encrypt(test2, 4));
+		// 	console.log('test 3 ' + encrypt(test3, 4));
+		
+
 	</script>
 </body>
 </html>
