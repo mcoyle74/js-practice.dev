@@ -7,9 +7,6 @@
 	<script type="text/javascript">
 		"use strict";
 
-		var test = 'This is a test!';
-		var testB = '0123456789';
-
 		function encrypt(text, n) {
 			if (n <= 0) {
 				return text;
@@ -33,25 +30,57 @@
 			return text;
 		}
 
-		function decrypt(text, n) {
+		function decrypt(encryptedText, n) {
 
 			if (n <= 0) {
-				return text;
-			}  else if (text === '') {
+				return encryptedText;
+			}  else if (encryptedText === '') {
 				return '';
-			} else if (text === null) {
+			} else if (encryptedText === null) {
 				return null;
 			}
 
-			return text;
+			var even;
+			(encryptedText.length % 2 == 0) ? even = true : even = false;
+
+			if (encryptedText.length % 2 == 1) {
+				var lastChar = encryptedText.slice(-1);
+				encryptedText = encryptedText.substr(0, encryptedText.length - 1);
+			}
+
+			var halfA = encryptedText.substr(0, encryptedText.length/2).split('');
+			var halfB = encryptedText.substr(-(encryptedText.length/2)).split('');
+
+			for (var i = 0; i < n; i++) {
+				var str = '', result;
+				for (var j = 0; j < encryptedText.length; j++) {
+					if (j % 2 == 0) {
+						str += halfB.shift();
+					} else {
+						str += halfA.shift();
+					}
+				}
+				halfA = str.substr(0, str.length/2).split('');
+				halfB = str.substr(-(str.length/2)).split('');
+				(even) ? result = str : result = str + lastChar;
+			}
+
+			return result;
 		}
 
-		
-		for (var m = 0; m < 7; m++) {
-			console.log('test ' + m);
-			console.log(encrypt(test, m));
-			console.log(encrypt(testB, m));
-		}
+		var testStr1 = '0123456789abcdef';
+		var testStr2 = 'Java is to JavaScript what car is to carpet.';
+		var testStr3 = 'May the Force be with you';
+		var testStr4 = 'What\'s up Doc?';
+
+		console.log(encrypt(testStr1, 2));
+		console.log(decrypt('37bf26ae159d048c', 2), '\n\n');
+		console.log(encrypt(testStr2, 3));
+		console.log(decrypt(' Shirv i ttiv rcJtcaspaJpco.saw aaort e ata ', 3), '\n\n');
+		console.log(encrypt(testStr3, 4));
+		console.log(decrypt('eey thcyioM  obh e trawFu', 4), '\n\n');
+		console.log(encrypt(testStr4, 5));
+		console.log(decrypt('htsu o?Wa\' pDc', 5), '\n\n');
 
 	</script>
 </body>
