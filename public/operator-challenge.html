@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Operator Challenge</title>
+</head>
+<body>
+<script type="text/javascript">
+	'use strict';
+
+	// Given a string, '123456789', how many expressions can be made
+	// that total 100 by inserting a '+', '-' or nothing between the 
+	// digits. Example: 123 + 45 - 67 + 8 - 9 = 100
+
+	function decimalToTernary(n) {
+		var digits = [n % 3];
+
+		for (var i = 0; i < 7; i++) {
+			n = Math.floor(n/3);
+			digits.unshift(n % 3);
+		}
+		return digits;
+	}
+
+	var sequences = [];
+
+	for (var n = 0; n < 6561; n++) {
+
+		sequences.push(decimalToTernary(n));
+			
+	}
+
+	sequences.forEach(function(sequence, i, array) {
+		sequence.forEach(function(value, index) {
+			if (value == 0) {
+				sequence[index] = (index + 1) + '';
+			} else if (value == 1) {
+				sequence[index] = (index + 1) + ' - ';
+			} else {
+				sequence[index] = (index + 1) + ' + '
+			}
+		});
+		array[i].push('9');
+		array[i] = array[i].join('');
+	});
+
+	var results = [];
+
+	sequences.forEach(function(str) {
+		if (eval(str) == 100) {
+			results.push(str);
+		}
+	});
+
+	results.forEach(function(result) {
+		console.log(result + ' = ' + eval(result));
+	});
+
+</script>
+</body>
+</html>
