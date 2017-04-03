@@ -1,9 +1,21 @@
 body {
 	color: #fff;
 	background-color: #005d35;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+	text-align: center;
 }
 
 small {
-	font-size: .6em;
+	font-size: .5em;
+}
+
+.suit-black {
+	color: #000;
+}
+
+.suit-red {
+	color: #f00;
 }
