@@ -29,3 +29,11 @@ small {
 	padding-top: 10px;
 	background-color: #fff;
 }
+
+.card {
+	width: 250px;
+	height: 350px;
+	background-color: #fff;
+	border-radius: 10px;
+	font-size: 2em;
+}
