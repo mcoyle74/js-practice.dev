@@ -36,4 +36,10 @@ small {
 	background-color: #fff;
 	border-radius: 10px;
 	font-size: 2em;
+	margin-left: 1em;
+	transform: rotate(-4deg);
+}
+
+.card-rank {
+	padding-left: .33em;
 }
