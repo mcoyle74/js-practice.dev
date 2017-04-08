@@ -24,9 +24,21 @@ function buildDeck(suits, ranks) {
 	return deck;
 }
 
-function randomCard() {
-	return Math.floor(Math.random() * 52);
+// Fisher-Yates shuffle: https://bost.ocks.org/mike/shuffle/
+function shuffle(array) {
+	var cardsRemaining = array.length,
+		temp,
+		index;
+	while (cardsRemaining) {
+		index = Math.floor(Math.random() * cardsRemaining--);
+		temp = array[cardsRemaining];
+		array[cardsRemaining] = array[index];
+		array[index] = temp;
+	}
+	return array;
 }
+
+var deck = buildDeck(suits, ranks);
 
 $('#deal').click(function() {
 	cards[0].innerHTML = buildDeck(suits, ranks)[randomCard()];
