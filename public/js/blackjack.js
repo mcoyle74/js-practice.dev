@@ -38,9 +38,12 @@ function shuffle(array) {
 	return array;
 }
 
-var deck = buildDeck(suits, ranks);
+var deck = shuffle(buildDeck(suits, ranks));
 
 $('#deal').click(function() {
-	cards[0].innerHTML = buildDeck(suits, ranks)[randomCard()];
-	cards[1].innerHTML = buildDeck(suits, ranks)[randomCard()];
+	if (deck.length < 12) {
+		deck = shuffle(buildDeck(suits, ranks));
+	}
+	cards[0].innerHTML = deck.shift();
+	cards[1].innerHTML = deck.shift();
 });
