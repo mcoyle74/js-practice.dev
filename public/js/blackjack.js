@@ -41,9 +41,16 @@ function shuffle(array) {
 var deck = shuffle(buildDeck(suits, ranks));
 
 $('#deal').click(function() {
+	$('#deal').hide();
 	if (deck.length < 12) {
 		deck = shuffle(buildDeck(suits, ranks));
 	}
-	cards[0].innerHTML = deck.shift();
-	cards[1].innerHTML = deck.shift();
+	setTimeout(function() {
+		$('.card').removeAttr('hidden');
+		cards[0].innerHTML = deck.shift();
+	}, 500);
+	setTimeout(function() {
+		$('.card2').removeAttr('hidden');
+		cards[1].innerHTML = deck.shift();
+	}, 1000);
 });
