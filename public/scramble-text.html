@@ -8,7 +8,7 @@
 	<script type="text/javascript">
 		"use strict";
 
-		function scrambleText (string) {
+		function scramble (string) {
 			var letters = string.split(''),
 				first = letters.shift(),
 				last  = letters.pop(),
@@ -26,6 +26,12 @@
 			return letters.join('');
 		}
 
+		function scrambleEachWord (string) {
+			var words = string.split(' ');
+			return words.map(function(word, i) {
+				return scramble(word);
+			}).join(' ');
+		}
 	</script>
 </body>
 </html>
