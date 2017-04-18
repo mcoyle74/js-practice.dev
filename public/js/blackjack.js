@@ -46,11 +46,20 @@ $('#deal').click(function() {
 		deck = shuffle(buildDeck(suits, ranks));
 	}
 	setTimeout(function() {
-		$('.card').removeAttr('hidden');
+		$('.player-card').removeAttr('hidden');
 		cards[0].innerHTML = deck.shift();
+	}, 250);
+	setTimeout(function() {
+		$('.dealer-card').removeAttr('hidden');
+		cards[1].innerHTML = deck.shift();
 	}, 500);
 	setTimeout(function() {
-		$('.card2').removeAttr('hidden');
-		cards[1].innerHTML = deck.shift();
+		$('.player-card2').removeAttr('hidden');
+		cards[2].innerHTML = deck.shift();
+	}, 750);
+	setTimeout(function() {
+		$('.dealer-card2').removeAttr('hidden');
+		cards[3].innerHTML = deck.shift();
 	}, 1000);
+
 });

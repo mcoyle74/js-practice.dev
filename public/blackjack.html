@@ -13,19 +13,32 @@
 			&clubs;
 			<span class="red">&diams;</span>
 			&nbsp;blackjack&nbsp;
+			<small>coded by Michael David Coyle</small>
 			<span class="red">&diams;</span>
 			&clubs;
 			<span class="red">&hearts;</span>
 			&spades;
-			<br><small>code by Michael David Coyle</small>
 		</h1>
 	</div>
-	<div class="card" hidden>
-		<p class="card-rank"></p>
-		<div class="card2" hidden>
+	
+	<div class="container">
+		<div class="player-card" hidden>
 			<p class="card-rank"></p>
+			<div class="player-card2" hidden>
+				<p class="card-rank"></p>
+			</div>
 		</div>
 	</div>
+
+	<div class="container">
+		<div class="dealer-card" hidden>
+			<p class="card-rank"></p>
+			<div class="dealer-card2" hidden>
+				<p class="card-rank"></p>
+			</div>
+		</div>
+	</div>
+
 	<button type="button" id="deal">deal</button>
 	<button type="button" id="hit">hit</button>
 	<button type="button" id="stay">stay</button>
