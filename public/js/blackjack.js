@@ -15,10 +15,29 @@ function buildDeck(suits, ranks) {
 	var deck = [];
 	suits.forEach(function(suit, index) {
 		ranks.forEach(function(rank) {
-			deck.push(rank + '<br>' + suit);
+			deck.push({rank: rank, suit: suit});
 		});
 	});
-
+	deck.forEach(function(card) {
+		switch (card.rank) {
+			case 'A':
+				card.value = 11;
+				break;
+			case 'J':
+			case 'Q':
+			case 'K':
+				card.value = 10;
+				break;
+			default:
+				card.value = parseInt(card.rank);
+		}
+		card.show = function() {
+			if (card.suit == '&hearts;' || card.suit == '&diams;') {
+				return '<span class="red">' + this.rank + '<br>' + this.suit + '</span>';
+			}
+			return this.rank + '<br>' + this.suit;
+		}
+	});
 	return deck;
 }
 
@@ -49,19 +68,19 @@ $('#deal').click(function() {
 	dealerHand.push(deck.shift());
 	setTimeout(function() {
 		$('.player-card').removeAttr('hidden');
-		cards[0].innerHTML = playerHand[0];
+		cards[0].innerHTML = playerHand[0].show();
 	}, 250);
 	setTimeout(function() {
 		$('.dealer-card').removeAttr('hidden');
-		cards[1].innerHTML = dealerHand[0];
+		cards[1].innerHTML = dealerHand[0].show();
 	}, 500);
 	setTimeout(function() {
 		$('.player-card2').removeAttr('hidden');
-		cards[2].innerHTML = playerHand[1];
+		cards[2].innerHTML = playerHand[1].show();
 	}, 750);
 	setTimeout(function() {
 		$('.dealer-card2').removeAttr('hidden');
-		cards[3].innerHTML = dealerHand[1];
+		cards[3].innerHTML = dealerHand[1].show();
 	}, 1000);
-	
+
 });
