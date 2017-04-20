@@ -17,9 +17,9 @@ p {
 	-webkit-margin-before: 0;
 }
 
-/*small {
+small {
 	font-size: .6em;
-}*/
+}
 
 .suit {
 	font-size: 1.25em;
@@ -97,4 +97,9 @@ p {
 	width: 50%;
 	float: left;
 	margin: 25px 0 25px 0;
+}
+
+.hand-total {
+	color: #fff;
+	text-align: center;
 }

@@ -55,6 +55,15 @@ function shuffle(array) {
 	return array;
 }
 
+function handTotal (hand) {
+	var handValue = hand.map(function(card) {
+		return card.value;
+	});
+	return handValue.reduce(function(a, b) {
+		return a + b;
+	})
+}
+
 var deck = shuffle(buildDeck(suits, ranks));
 
 $('#deal').click(function() {
@@ -66,21 +75,23 @@ $('#deal').click(function() {
 	dealerHand.push(deck.shift());
 	playerHand.push(deck.shift());
 	dealerHand.push(deck.shift());
+	console.log('player', playerHand, 'dealer', dealerHand);
 	setTimeout(function() {
 		$('.player-card').removeAttr('hidden');
 		cards[0].innerHTML = playerHand[0].show();
 	}, 250);
 	setTimeout(function() {
 		$('.dealer-card').removeAttr('hidden');
-		cards[1].innerHTML = dealerHand[0].show();
+		cards[2].innerHTML = dealerHand[0].show();
 	}, 500);
 	setTimeout(function() {
 		$('.player-card2').removeAttr('hidden');
-		cards[2].innerHTML = playerHand[1].show();
+		cards[1].innerHTML = playerHand[1].show();
 	}, 750);
 	setTimeout(function() {
 		$('.dealer-card2').removeAttr('hidden');
 		cards[3].innerHTML = dealerHand[1].show();
 	}, 1000);
-
+	$('#player-total').html(handTotal(playerHand));
+	$('#dealer-total').html(handTotal(dealerHand));
 });
