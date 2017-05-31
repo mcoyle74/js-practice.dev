@@ -1,37 +1,20 @@
 "use strict";
 
-function decToHex (n) {
+function decHex (n) {
 
-	var digits = [],
+	var hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'],
+		digits = [],
 		remainder;
 
 	do {
 		remainder = n % 16;
-		digits.unshift(remainder);
+		digits.unshift(hex[remainder]);
 		n = Math.floor(n / 16);
 	} while (n > 15);
 
 	if (n > 0) {
-		digits.unshift(n);
+		digits.unshift(hex[n]);
 	}
 
-	var hex = digits.map(function(digit) {
-		if (digit == 10) {
-			return 'a';
-		} else if (digit == 11) {
-			return 'b';
-		} else if (digit == 12) {
-			return 'c';
-		} else if (digit == 13) {
-			return 'd';
-		} else if (digit == 14) {
-			return 'e';
-		} else if (digit == 15) {
-			return 'f';
-		} else {
-			return digit;
-		}
-	});
-
-	return hex.join('');
+	return digits.join('');
 }
