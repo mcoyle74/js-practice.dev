@@ -1,6 +1,19 @@
 'use strict';
 
-function number_words(n) {
+function numberWords(n) {
+
+	if (!Number.isInteger(n)) {
+
+		throw new TypeError('argument must be an integer');
+
+	} else if (n > Number.MAX_SAFE_INTEGER) {
+
+		throw new RangeError('argument must be <= Number.MAX_SAFE_INTEGER');
+
+	} else if (n === 0) {
+
+		return 'zero';
+	};
 
 	function threeDigit(m) {
 
@@ -28,14 +41,64 @@ function number_words(n) {
 		return word; 
 	}
 
-	if (n == 0) {
-		return 'zero';
-	} else if (n < 1000) {
+	var quadrillion = '',
+		trillion = '',
+		billion = '',
+		million = '',
+		thousand = '';
+
+	if (n < 1000) {
+
 		return threeDigit(n);
-	} else if (n >= 1000) {
-		var word = '';
-		word += threeDigit(Math.floor(n / 1000));
-		word += (n % 1000 == 0) ? ' thousand' : ' thousand ' + threeDigit(n % 1000);
-		return word;
+
+	} else {
+
+		if (n >= Math.pow(10, 15)) {
+
+			quadrillion = Math.floor(n / Math.pow(10, 15));
+			n %= quadrillion * Math.pow(10, 15);
+			quadrillion = threeDigit(quadrillion);
+			quadrillion += (n > 0) ? ' quadrillion ' : ' quadrillion';
+
+		}
+
+		if (n >= Math.pow(10, 12)) {
+
+			trillion = Math.floor(n / Math.pow(10, 12));
+			n %= trillion * Math.pow(10, 12);
+			trillion = threeDigit(trillion);
+			trillion += (n > 0) ? ' trillion ' : ' trillion';
+
+		}
+
+		if (n >= Math.pow(10, 9)) {
+
+			billion = Math.floor(n / Math.pow(10, 9));
+			n %= billion * Math.pow(10, 9);
+			billion = threeDigit(billion);
+			billion += (n > 0) ? ' billion ' : ' billion';
+
+		}
+
+		if (n >= Math.pow(10, 6)) {
+
+		 	million = Math.floor(n / Math.pow(10, 6));
+			n %= million * Math.pow(10, 6);
+			million = threeDigit(million);
+			million += (n > 0) ? ' million ' : ' million';
+
+		}
+
+		if (n >= 1000) {
+			thousand = Math.floor(n / 1000);
+			n %= thousand * 1000;
+			thousand = threeDigit(thousand);
+			thousand += (n > 0) ? ' thousand ' : ' thousand';
+		}
+		
 	}
+
+	n = n > 0 ? threeDigit(n) : '';
+
+	return quadrillion + trillion + billion + million + thousand + n;
 }
