@@ -15,90 +15,99 @@ function numberWords(n) {
 		return 'zero';
 	};
 
-	function threeDigit(m) {
+	function toWords(m) {
 
 		var ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'],
 			teens = ['ten', 'eleven', 'twelve', 'thir', 'four', 'fif', 'six', 'seven', 'eigh', 'nine'],
 			tens = ['', 'teen', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'],
-			word = '';
+			group100 = '',
+			group10 = '',
+			units = '';
 		
 		if (m >= 100) {
-			word += ones[Math.floor(m / 100)];
-			word += (m % 100 == 0) ? ' hundred' : ' hundred ';
+
+			group100 = ones[Math.floor(m / 100)];
 			m %= 100;
+			group100 += (m > 0) ? ' hundred ' : ' hundred';
+
 		}
 
 		if (m < 10) {
-			word += ones[m];
+
+			units = ones[m];
+
 		} else if (m < 20) {
-			word += (m < 13) ? teens[m - 10] : teens[m - 10] + 'teen';
+
+			group10 = (m < 13) ? teens[m - 10] : (teens[m - 10] + 'teen');
+
 		} else if (m < 100) {
-			var ten = Math.floor(m / 10);
-			var unit = m % 10;
-			word += (m % 10 == 0) ? tens[ten] : tens[ten] + '-' + ones[unit];
+
+			var ten = Math.floor(m / 10),
+				unit = m % 10;
+			group10 = (unit > 0) ? (tens[ten] + '-' + ones[unit]) : tens[ten];
+
 		}
 
-		return word; 
+		return group100 + group10 + units; 
 	}
 
-	var quadrillion = '',
-		trillion = '',
-		billion = '',
-		million = '',
-		thousand = '';
+	var quadrillions = '',
+		trillions = '',
+		billions = '',
+		millions = '',
+		thousands = '',
+		pow15 = Math.pow(10, 15),
+		pow12 = Math.pow(10, 12),
+		pow9 = Math.pow(10, 9),
+		pow6 = Math.pow(10, 6);
 
 	if (n < 1000) {
 
-		return threeDigit(n);
+		return toWords(n);
 
 	} else {
 
-		if (n >= Math.pow(10, 15)) {
+		if (n >= pow15) {
 
-			quadrillion = Math.floor(n / Math.pow(10, 15));
-			n %= quadrillion * Math.pow(10, 15);
-			quadrillion = threeDigit(quadrillion);
-			quadrillion += (n > 0) ? ' quadrillion ' : ' quadrillion';
-
-		}
-
-		if (n >= Math.pow(10, 12)) {
-
-			trillion = Math.floor(n / Math.pow(10, 12));
-			n %= trillion * Math.pow(10, 12);
-			trillion = threeDigit(trillion);
-			trillion += (n > 0) ? ' trillion ' : ' trillion';
+			quadrillions = toWords(Math.floor(n / pow15)) + ' quadrillion';
+			n %= Math.floor(n / pow15) * pow15;
+			if (n > 0) { quadrillions += ' '; }
 
 		}
 
-		if (n >= Math.pow(10, 9)) {
+		if (n >= pow12) {
 
-			billion = Math.floor(n / Math.pow(10, 9));
-			n %= billion * Math.pow(10, 9);
-			billion = threeDigit(billion);
-			billion += (n > 0) ? ' billion ' : ' billion';
+			trillions = toWords(Math.floor(n / pow12)) + ' trillion';
+			n %= Math.floor(n / pow12) * pow12;
+			if (n > 0) { trillions += ' '; }
 
 		}
 
-		if (n >= Math.pow(10, 6)) {
+		if (n >= pow9) {
 
-		 	million = Math.floor(n / Math.pow(10, 6));
-			n %= million * Math.pow(10, 6);
-			million = threeDigit(million);
-			million += (n > 0) ? ' million ' : ' million';
+			billions = toWords(Math.floor(n / pow9)) + ' billion';
+			n %= Math.floor(n / pow9) * pow9;
+			if (n > 0) { billions += ' '; }
+
+		}
+
+		if (n >= pow6) {
+
+			millions = toWords(Math.floor(n / pow6)) + ' million';
+			n %= Math.floor(n / pow6) * pow6;
+			if (n > 0) { millions += ' '; }
 
 		}
 
 		if (n >= 1000) {
-			thousand = Math.floor(n / 1000);
-			n %= thousand * 1000;
-			thousand = threeDigit(thousand);
-			thousand += (n > 0) ? ' thousand ' : ' thousand';
+			thousands = toWords(Math.floor(n / 1000)) + ' thousand';
+			n %= Math.floor(n / 1000) * 1000;
+			if (n > 0) { thousands += ' '; }
 		}
 		
 	}
 
-	n = n > 0 ? threeDigit(n) : '';
+	n = n > 0 ? toWords(n) : '';
 
-	return quadrillion + trillion + billion + million + thousand + n;
+	return quadrillions + trillions + billions + millions + thousands + n;
 }
