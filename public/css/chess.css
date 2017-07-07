@@ -1,0 +1,67 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+.row {
+	height: 80px;
+	width: 640px;
+	float: left;
+}
+
+.square {
+	font-size: 3.5em;
+	text-align: center;
+	height: 80px;
+	width: 80px;
+	float: left;
+}
+
+.light {
+	background-color: #faf4da;
+}
+
+.dark {
+	background-color: #006400;
+}
+
+.white {
+	color: #fff;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+.row-marker {
+	height: 50px;
+	width: 20px;
+	padding: 30px 0 0 0;
+}
+
+.col-marker {
+	height: 20px;
+	width: 80px;
+	text-align: center;
+	float: left;
+}
+
+#board {
+	height: 640px;
+	width: 640px;
+	float: left;
+}
+
+#col-marker-row {
+	font-size: 1.2em;
+	height: 20px;
+	width: 640px;
+	margin-left: 20px;
+	clear: both;
+}
+
+#row-marker-column {
+	font-size: 1.2em;
+	width: 20px;
+	float: left;
+}
