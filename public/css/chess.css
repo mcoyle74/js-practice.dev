@@ -8,7 +8,6 @@ body {
 }
 
 .row {
-	font-size: 16vw;
 	height: 12%;
 	width: 96%;
 	float: left;
@@ -21,7 +20,6 @@ body {
 	}
 
 	.row {
-		font-size: 8vw;
 		height: 12%;
 		width: 96%;
 		float: left;
@@ -35,8 +33,6 @@ body {
 }
 
 .square {
-	font-size: .5em;
-	text-align: center;
 	height: 100%;
 	width: 12%;
 	float: left;
@@ -50,13 +46,12 @@ body {
 	background-color: #006400;
 }
 
-.white {
-	color: #fff;
-	text-shadow:
-		-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
+.piece {
+	display: block;
+	height: 95%;
+	width: 95%;
+	padding-top: 3%;
+	margin: auto;
 }
 
 .row-marker {
