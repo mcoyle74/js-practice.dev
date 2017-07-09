@@ -48,10 +48,10 @@ body {
 
 .piece {
 	display: block;
-	height: 95%;
-	width: 95%;
-	padding-top: 3%;
-	margin: auto;
+	position: absolute;
+	height: 10%;
+	width: 10%;
+	/*padding-top: 3%;*/
 }
 
 .row-marker {
@@ -76,7 +76,7 @@ body {
 }
 
 #col-marker-row {
-	font-size: 1vw;
+	font-size: 2vw;
 	height: 4%;
 	width: 96%;
 	padding-top: 2%;
@@ -84,7 +84,7 @@ body {
 }
 
 #row-marker-column {
-	font-size: 1vw;
+	font-size: 2vw;
 	height: 96%;
 	width: 4%;
 	float: left;
@@ -94,4 +94,196 @@ body {
 	height: 4%;
 	width: 4%;
 	float: left;
+}
+
+#black-rook-1 {
+	position: absolute;
+	top: 1%;
+	left: 4.5%;
+}
+
+#black-knight-1 {
+	position: absolute;
+	top: 1%;
+	left: 16%;
+}
+
+#black-bishop-1 {
+	position: absolute;
+	top: 1%;
+	left: 27.5%;
+}
+
+#black-queen {
+	position: absolute;
+	top: 1%;
+	left: 39%;
+}
+
+#black-king {
+	position: absolute;
+	top: 1%;
+	left: 50.5%;
+}
+
+#black-bishop-2 {
+	position: absolute;
+	top: 1%;
+	left: 62%;
+}
+
+#black-knight-2 {
+	position: absolute;
+	top: 1%;
+	left: 73.5%;
+}
+
+#black-rook-2 {
+	position: absolute;
+	top: 1%;
+	left: 85%;
+}
+
+#black-pawn-a {
+	position: absolute;
+	top: 12%;
+	left: 4.5%;
+}
+
+#black-pawn-b {
+	position: absolute;
+	top: 12%;
+	left: 16%;
+}
+
+#black-pawn-c {
+	position: absolute;
+	top: 12%;
+	left: 27.5%;
+}
+
+#black-pawn-d {
+	position: absolute;
+	top: 12%;
+	left: 39%;
+}
+
+#black-pawn-e {
+	position: absolute;
+	top: 12%;
+	left: 50.5%;
+}
+
+#black-pawn-f {
+	position: absolute;
+	top: 12%;
+	left: 62%;
+}
+
+#black-pawn-g {
+	position: absolute;
+	top: 12%;
+	left: 73.5%;
+}
+
+#black-pawn-h {
+	position: absolute;
+	top: 12%;
+	left: 85%;
+}
+
+#white-pawn-a {
+	position: absolute;
+	top: 72%;
+	left: 4.5%;
+}
+
+#white-pawn-b {
+	position: absolute;
+	top: 72%;
+	left: 16%;
+}
+
+#white-pawn-c {
+	position: absolute;
+	top: 72%;
+	left: 27.5%;
+}
+
+#white-pawn-d {
+	position: absolute;
+	top: 72%;
+	left: 39%;
+}
+
+#white-pawn-e {
+	position: absolute;
+	top: 72%;
+	left: 50.5%;
+}
+
+#white-pawn-f {
+	position: absolute;
+	top: 72%;
+	left: 62%;
+}
+
+#white-pawn-g {
+	position: absolute;
+	top: 72%;
+	left: 73.5%;
+}
+
+#white-pawn-h {
+	position: absolute;
+	top: 72%;
+	left: 85%;
+}
+
+#white-rook-1 {
+	position: absolute;
+	top: 86%;
+	left: 4%;
+}
+
+#white-knight-1 {
+	position: absolute;
+	top: 86%;
+	left: 16%;
+}
+
+#white-bishop-1 {
+	position: absolute;
+	top: 86%;
+	left: 27.5%;
+}
+
+#white-queen {
+	position: absolute;
+	top: 86%;
+	left: 39%;
+}
+
+#white-king {
+	position: absolute;
+	top: 86%;
+	left: 50.5%;
+}
+
+#white-bishop-2 {
+	position: absolute;
+	top: 86%;
+	left: 62%;
+}
+
+#white-knight-2 {
+	position: absolute;
+	top: 86%;
+	left: 73.5%;
+}
+
+#white-rook-2 {
+	position: absolute;
+	top: 86%;
+	left: 85%;
 }
