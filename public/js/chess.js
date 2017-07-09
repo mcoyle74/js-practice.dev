@@ -5,32 +5,38 @@ function Game() {
 	this.board = null;
 	this.onMove = 'white';
 	this.set = {
-		black: {
-			rooks: [ new Piece('rook', 'black', 'a8'), new Piece('rook', 'black', 'h8') ],
-			knights: [ new Piece('knight', 'black', 'b8'), new Piece('knight', 'black', 'g8') ],	
-			bishops: [ new Piece('bishop', 'black', 'c8'), new Piece('bishop', 'black', 'f8') ],
-			queen: new Piece('queen', 'black', 'd8'),
-			king: new Piece('king', 'black', 'e8'),
-			pawns: [
-				new Piece('pawn', 'black', 'a7'), new Piece('pawn', 'black', 'b7'),
-				new Piece('pawn', 'black', 'c7'), new Piece('pawn', 'black', 'd7'),
-				new Piece('pawn', 'black', 'e7'), new Piece('pawn', 'black', 'f7'), 
-				new Piece('pawn', 'black', 'g7'), new Piece('pawn', 'black', 'h7')
-			]
-		},
-		white: {
-			rooks: [ new Piece('rook', 'white', 'a1'), new Piece('rook', 'white', 'h1') ],
-			knights: [ new Piece('knight', 'white', 'b1'), new Piece('knight', 'white', 'g1') ],	
-			bishops: [ new Piece('bishop', 'white', 'c1'), new Piece('bishop', 'white', 'f1') ],
-			queen: new Piece('queen', 'white', 'd1'),
-			king: new Piece('king', 'white', 'e1'),
-			pawns: [
-				new Piece('pawn', 'white', 'a2'), new Piece('pawn', 'white', 'b2'),
-				new Piece('pawn', 'white', 'c2'), new Piece('pawn', 'white', 'd2'),
-				new Piece('pawn', 'white', 'e2'), new Piece('pawn', 'white', 'f2'), 
-				new Piece('pawn', 'white', 'g2'), new Piece('pawn', 'white', 'h2')
-			]
-		},
+		blackRook1: $('#black-rook-1'),
+		blackKnight1: $('#black-knight-1'),
+		blackBishop1: $('#black-bishop-1'),
+		blackQueen: $('#black-queen'),
+		blackKing: $('#black-king'),
+		blackBishop2: $('#black-bishop-2'),
+		blackKnight2: $('#black-knight-2'),
+		blackRook2: $('#black-rook-2'),
+		blackPawnA: $('#black-pawn-a'),
+		blackPawnB: $('#black-pawn-b'),
+		blackPawnC: $('#black-pawn-c'),
+		blackPawnD: $('#black-pawn-d'),
+		blackPawnE: $('#black-pawn-e'),
+		blackPawnF: $('#black-pawn-f'),
+		blackPawnG: $('#black-pawn-g'),
+		blackPawnH: $('#black-pawn-h'),
+		whitePawnA: $('#white-pawn-a'),
+		whitePawnB: $('#white-pawn-b'),
+		whitePawnC: $('#white-pawn-c'),
+		whitePawnD: $('#white-pawn-d'),
+		whitePawnE: $('#white-pawn-e'),
+		whitePawnF: $('#white-pawn-f'),
+		whitePawnG: $('#white-pawn-g'),
+		whitePawnH: $('#white-pawn-h'),
+		whiteRook1: $('#white-rook-1'),
+		whiteKnight1: $('#white-knight-1'),
+		whiteBishop1: $('#white-bishop-1'),
+		whiteQueen: $('#white-queen'),
+		whiteKing: $('#white-king'),
+		whiteBishop2: $('#white-bishop-2'),
+		whiteKnight2: $('#white-knight-2'),
+		whiteRook2: $('#white-rook-2')
 	};
 
 	this.move = function(fromSq, toSq) {
@@ -54,48 +60,48 @@ function Game() {
 	this.reset = function() {
 		this.board = [
 			[
-				this.set.black.rooks[0],
-			 	this.set.black.knights[0],
-				this.set.black.bishops[0],
-				this.set.black.queen,
-				this.set.black.king,
-				this.set.black.bishops[1],
-				this.set.black.knights[1],
-				this.set.black.rooks[1]
+				this.set.blackRook1,
+			 	this.set.blackKnight1,
+				this.set.blackBishop1,
+				this.set.blackQueen,
+				this.set.blackKing,
+				this.set.blackBishop2,
+				this.set.blackKnight2,
+				this.set.blackRook2
 			],
 			[
-				this.set.black.pawns[0],
-				this.set.black.pawns[1],
-				this.set.black.pawns[2],
-				this.set.black.pawns[3],
-				this.set.black.pawns[4],
-				this.set.black.pawns[5],
-				this.set.black.pawns[6],
-				this.set.black.pawns[7],
+				this.set.blackPawnA,
+				this.set.blackPawnB,
+				this.set.blackPawnC,
+				this.set.blackPawnD,
+				this.set.blackPawnE,
+				this.set.blackPawnF,
+				this.set.blackPawnG,
+				this.set.blackPawnH,
 			],
 			['', '', '', '', '', '', '', ''],
 			['', '', '', '', '', '', '', ''],
 			['', '', '', '', '', '', '', ''],
 			['', '', '', '', '', '', '', ''],
 			[
-				this.set.white.pawns[0],
-				this.set.white.pawns[1],
-				this.set.white.pawns[2],
-				this.set.white.pawns[3],
-				this.set.white.pawns[4],
-				this.set.white.pawns[5],
-				this.set.white.pawns[6],
-				this.set.white.pawns[7],
+				this.set.whitePawnA,
+				this.set.whitePawnB,
+				this.set.whitePawnC,
+				this.set.whitePawnD,
+				this.set.whitePawnE,
+				this.set.whitePawnF,
+				this.set.whitePawnG,
+				this.set.whitePawnH,
 			],
 			[
-				this.set.white.rooks[0],
-			 	this.set.white.knights[0],
-				this.set.white.bishops[0],
-				this.set.white.queen,
-				this.set.white.king,
-				this.set.white.bishops[1],
-				this.set.white.knights[1],
-				this.set.white.rooks[1]
+				this.set.whiteRook1,
+			 	this.set.whiteKnight1,
+				this.set.whiteBishop1,
+				this.set.whiteQueen,
+				this.set.whiteKing,
+				this.set.whiteBishop2,
+				this.set.whiteKnight2,
+				this.set.whiteRook2
 			],
 		]
 
@@ -121,38 +127,6 @@ function Game() {
 
 		return columns[col];
 	};
-};
-
-function Piece(rank, color, square) {
-
-	this.rank = rank;
-	this.color = color;
-	this.square = square;
-	
-	switch (rank) {
-
-		case 'king':
-			this.token = String.fromCharCode(9818);
-			break;
-		case 'queen':
-			this.token = String.fromCharCode(9819);
-			break;
-		case 'rook':
-			this.token = String.fromCharCode(9820);
-			break;
-		case 'bishop':
-			this.token = String.fromCharCode(9821);
-			break;
-		case 'knight':
-			this.token = String.fromCharCode(9822);
-			break;
-		case 'pawn':
-			this.token = String.fromCharCode(9823);
-			break;
-		default:
-			this.token = null;
-			break;
-	}
 };
 
 var game = new Game();
