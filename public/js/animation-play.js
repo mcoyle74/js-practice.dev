@@ -213,8 +213,8 @@ function rain(direction = 'd', multiple = 10, time = 50, ease = 'linear') {
 
 function randomGrid(spacing = 80, duration = 500) {
 
-	var halfHeight = Math.round(window.innerHeight / 2) - 100,
-		halfWidth = Math.round(window.innerWidth / 2) - 100,
+	var halfHeight = Math.round((window.innerHeight / 2) - parseFloat(white.css('width')) / 2),
+		halfWidth = Math.round((window.innerWidth / 2) - parseFloat(white.css('width')) / 2),
 		randomX,
 		randomY,
 		randomZ,
