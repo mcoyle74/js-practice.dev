@@ -336,3 +336,26 @@ function gridShuffle(spacing = 80, duration = 1000) {
 	randomGrid(spacing, duration);
 
 }
+
+function depthIllusion(time = 2000) {
+
+	var darkColor,
+		lightColor;
+
+	circles.each(function(i) {
+
+		darkColor = (-(i - (circles.length + 1))).toString(16).repeat(3);
+		lightColor = (-(i - (circles.length + 5))).toString(16).repeat(3);
+
+		$(this).css({
+			'background-image':'radial-gradient(ellipse farthest-corner at 33% 33% , #' + lightColor + ' 5%, #' + darkColor + ', #' + darkColor + ' 65%)',
+			'border-style':'none'
+	    }).animate({
+			height: String(Math.pow((i + 10), 2)),
+			width: String(Math.pow((i + 10), 2)),
+			left: String(7 * Math.pow((i + 1), 2) + 50),
+			top: String(Math.pow((i + 1), 2) + 50)
+		}, time);
+	});
+}
+
