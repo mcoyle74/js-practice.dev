@@ -1,3 +1,7 @@
+body {
+	background-color: #d3d3d3;
+}
+
 .circle {
 	position: absolute;
 	top: 50px;
@@ -6,48 +10,47 @@
 	width: 60px;
 }
 
+#black {
+	background-color: black;
+	left: 50px;
+}
+
 #white {
 	background-color: white;
-	border: 1px solid gray;
-	left: 50px;
+	left: 150px;
 }
 
 #red {
 	background-color: red;
-	left: 150px;
+	left: 250px;
 }
 
 #green {
 	background-color: green;
-	left: 250px;
-}
-
-#blue {
-	background-color: blue;
 	left: 350px;
-}
-
-#yellow {
-	background-color: yellow;
-	left: 450px;
-}
-
-#purple {
-	background-color: purple;
-	left: 550px;
-}
-
-#gray {
-	background-color: gray;
-	left: 650px;
 }
 
 #orange {
 	background-color: orange;
+	left: 450px;
+}
+
+#blue {
+	background-color: blue;
+	left: 550px;
+}
+
+#yellow {
+	background-color: yellow;
+	left: 650px;
+}
+
+#purple {
+	background-color: purple;
 	left: 750px;
 }
 
-#black {
-	background-color: black;
+#gray {
+	background-color: gray;
 	left: 850px;
 }
