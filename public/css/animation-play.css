@@ -1,0 +1,53 @@
+.circle {
+	position: absolute;
+	top: 50px;
+	border-radius: 50%;
+	height: 60px;
+	width: 60px;
+}
+
+#white {
+	background-color: white;
+	border: 1px solid gray;
+	left: 50px;
+}
+
+#red {
+	background-color: red;
+	left: 150px;
+}
+
+#green {
+	background-color: green;
+	left: 250px;
+}
+
+#blue {
+	background-color: blue;
+	left: 350px;
+}
+
+#yellow {
+	background-color: yellow;
+	left: 450px;
+}
+
+#purple {
+	background-color: purple;
+	left: 550px;
+}
+
+#gray {
+	background-color: gray;
+	left: 650px;
+}
+
+#orange {
+	background-color: orange;
+	left: 750px;
+}
+
+#black {
+	background-color: black;
+	left: 850px;
+}
