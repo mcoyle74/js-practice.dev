@@ -24,7 +24,7 @@ function reset(time = 400) {
 			width: '60',
 			top: '50',
 			left: String((i * 100) + 50)
-		}, time);
+		}, time).removeAttr('style');
 	});
 }
 
