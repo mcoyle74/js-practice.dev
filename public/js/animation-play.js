@@ -50,10 +50,13 @@ function scatter(scale = 400, time = 400, ease = 'linear') {
 
 function center(time = 400, ease = 'linear') {
 
+	var halfHeight = Math.round((window.innerHeight / 2) - parseFloat(white.css('width')) / 2).toString(),
+		halfWidth = Math.round((window.innerWidth / 2) - parseFloat(white.css('width')) / 2).toString();
+
 	circles.each(function() {
 		$(this).animate({
-			top: "50%",
-			left: "50%"
+			top: halfHeight,
+			left: halfWidth
 		}, {
 			duration: time,
 			easing: ease
@@ -185,31 +188,32 @@ function runCircle(color, h, k, radius, time = 400, ease = 'linear') {
 	});
 }
 
-function rain(direction = 'd', multiple = 10, time = 50, ease = 'linear') {
+// function rain(multiple = 10, time = 50, ease = 'linear') {
 
-	var rand,
-	index;
+// 	var rand,
+// 	index;
 
-	for (var i = 0; i < multiple; i++) {
+// 	for (var i = 0; i < multiple; i++) {
 
-		for (var j = 0; j < 100; j++) {
+// 		for (var j = 0; j < 100; j++) {
 
-			rand = getRandomInt(10, 100);
-			index = getRandomInt(0, circles.length - 1);
+// 			rand = getRandomInt(10, 100);
+// 			index = getRandomInt(0, circles.length - 1);
 			
-			if (direction === 'd') {
-				circles[index].animate({
-					top: "+=" + rand
-				}, {
-					duration: time,
-					easing: ease
-				});
-			}
-		}
+// 				circles.each(function(i) {
+// 					i = index;
+// 					$(this).animate({
+// 						top: "+=" + rand
+// 					}, {
+// 						duration: time,
+// 						easing: ease
+// 					});
+// 				});
+// 		}
 
-		reset(10);
-	}
-}
+// 		reset(10);
+// 	}
+// }
 
 function randomGrid(spacing = 80, duration = 500) {
 
