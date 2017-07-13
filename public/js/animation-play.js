@@ -188,32 +188,38 @@ function runCircle(color, h, k, radius, time = 400, ease = 'linear') {
 	});
 }
 
-// function rain(multiple = 10, time = 50, ease = 'linear') {
+function rain(multiple = 100, time = 50, ease = 'linear') {
 
-// 	var rand,
-// 	index;
+	var discs = [
+			black, white, red, green, orange, blue, yellow, purple, gray
+		],
+		rand,
+		index;
 
-// 	for (var i = 0; i < multiple; i++) {
+	for (var i = 0; i < multiple; i++) {
+		for (var j = 0; j < discs.length; j++) {
 
-// 		for (var j = 0; j < 100; j++) {
-
-// 			rand = getRandomInt(10, 100);
-// 			index = getRandomInt(0, circles.length - 1);
+			rand = getRandomInt(0, window.innerHeight + 70);
+			index = getRandomInt(0, discs.length - 1);
 			
-// 				circles.each(function(i) {
-// 					i = index;
-// 					$(this).animate({
-// 						top: "+=" + rand
-// 					}, {
-// 						duration: time,
-// 						easing: ease
-// 					});
-// 				});
-// 		}
+			discs[index].animate({
+				top: rand
+			}, {
+				duration: time,
+				easing: ease
+			});
+		}
 
-// 		reset(10);
-// 	}
-// }
+		circles.each(function(i) {
+			$(this).css({
+				'top': '-70',
+				'left': String((i * 100) + 50)
+			});
+		});
+	}
+
+	reset(10);
+}
 
 function randomGrid(spacing = 80, duration = 500) {
 
