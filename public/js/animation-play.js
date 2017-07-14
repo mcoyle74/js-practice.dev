@@ -369,3 +369,13 @@ function depthIllusion(time = 2000) {
 	});
 }
 
+function getRandomColor() {
+
+	var hex = '#';
+
+	for (var i = 0; i < 6; i++) {
+		hex += getRandomInt(0, 15).toString(16);
+	};
+
+	return hex;
+}
