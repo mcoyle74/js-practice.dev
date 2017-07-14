@@ -441,3 +441,79 @@ function animateColorAll(sameHue = false) {
 	};
 
 };
+
+function circularCluster(radius = 100, time = 400) {
+
+	var	deg45 = Math.cos(Math.PI / 4) * radius,
+		h, k, x, y, z = 10,
+		circlesIndex = [0, 1, 2, 3, 4, 5, 6, 7, 8],
+		random;
+
+	center();
+
+	h = (window.innerWidth / 2) - (parseInt(black.css('width')) / 2);
+	k = (window.innerHeight / 2) - (parseInt(black.css('width')) / 2);
+
+	circles.each(function() {
+
+		random = circlesIndex.splice(getRandomInt(0, circlesIndex.length - 1), 1)[0];
+
+		switch (random) {
+
+			case 0:
+				x = h;
+				y = k;
+				break;
+
+			case 1:
+				x = h;
+				y = k - radius;
+				break;
+
+			case 2:
+				x = h + deg45;
+				y = k - deg45;
+				break;
+
+			case 3:
+				x = h + radius;
+				y = k;
+				break;
+
+			case 4:
+				x = h + deg45;
+				y = k + deg45;
+				break;
+
+			case 5:
+				x = h;
+				y = k + radius;
+				break;
+
+			case 6:
+				x = h - deg45;
+				y = k + deg45;
+				break;
+
+			case 7:
+				x = h - radius;
+				y = k;
+				break;
+
+			case 8:
+				x = h - deg45;
+				y = k - deg45;
+				break;
+
+		};
+
+		$(this).css(
+			'z-index', String(z--)
+		).animate({
+			left: x.toString(),
+			top: y.toString()
+		}, time);
+	});
+
+};
+
