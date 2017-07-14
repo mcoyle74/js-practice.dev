@@ -379,3 +379,37 @@ function getRandomColor() {
 
 	return hex;
 }
+
+function animateColorChange(element, hue, amount = 85, seconds = 2) {
+
+	var rgb = element.css('background-color').replace(/[rgb\(\)]/g, '').split(', '),
+		r = +rgb[0],
+		g = +rgb[1],
+		b = +rgb[2],
+		ms = Math.round((seconds * 1000) / amount),
+		count = 0;
+
+	var intervalID = setInterval(function() {
+
+		if (hue === 'r') {
+
+			element.css('background-color', 'rgb(' + (r++) + ', ' + (g--) + ', ' + (b--) + ')');
+
+		} else if (hue === 'g') {
+
+			element.css('background-color', 'rgb(' + (r--) + ', ' + (g++) + ', ' + (b--) + ')');
+
+		} else if (hue === 'b') {
+
+			element.css('background-color', 'rgb(' + (r--) + ', ' + (g--) + ', ' + (b++) + ')');
+
+		}
+
+		count++;
+
+		if (count >= amount) {
+			clearInterval(intervalID);
+		};
+
+	}, ms);
+};
