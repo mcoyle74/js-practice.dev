@@ -13,7 +13,7 @@ var white = $('#white'),
 
 function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+};
 
 function reset(time = 400) {
 
@@ -26,7 +26,7 @@ function reset(time = 400) {
 			left: String((i * 100) + 50)
 		}, time).removeAttr('style');
 	});
-}
+};
 
 function scatter(scale = 400, time = 400, ease = 'linear') {
 
@@ -46,7 +46,7 @@ function scatter(scale = 400, time = 400, ease = 'linear') {
 			easing: ease
 		});
 	});
-}
+};
 
 function center(time = 400, ease = 'linear') {
 
@@ -62,7 +62,7 @@ function center(time = 400, ease = 'linear') {
 			easing: ease
 		});
 	});
-}
+};
 
 function resize(plusOrMinusEquals, pixels, which = 'all') {
 
@@ -82,8 +82,8 @@ function resize(plusOrMinusEquals, pixels, which = 'all') {
 			width: plusOrMinusEquals + pixels
 		});
 
-	}
-}
+	};
+};
 
 function runCircle(color, h, k, radius, time = 400, ease = 'linear') {
 
@@ -186,7 +186,7 @@ function runCircle(color, h, k, radius, time = 400, ease = 'linear') {
 		left: h + radius,
 		top: k
 	});
-}
+};
 
 function rain(multiple = 100, time = 50, ease = 'linear') {
 
@@ -216,10 +216,10 @@ function rain(multiple = 100, time = 50, ease = 'linear') {
 				'left': String((i * 100) + 50)
 			});
 		});
-	}
+	};
 
 	reset(10);
-}
+};
 
 function randomGrid(spacing = 80, duration = 500) {
 
@@ -337,7 +337,7 @@ function randomGrid(spacing = 80, duration = 500) {
 		}, duration);
 
 	});
-}
+};
 
 function gridShuffle(spacing = 80, duration = 1000) {
 
@@ -345,7 +345,7 @@ function gridShuffle(spacing = 80, duration = 1000) {
 	scatter(spacing, duration / 4);
 	randomGrid(spacing, duration);
 
-}
+};
 
 function depthIllusion(time = 2000) {
 
@@ -367,7 +367,7 @@ function depthIllusion(time = 2000) {
 			top: String(Math.pow((i + 1), 2) + 50)
 		}, time);
 	});
-}
+};
 
 function getRandomColor() {
 
@@ -378,7 +378,7 @@ function getRandomColor() {
 	};
 
 	return hex;
-}
+};
 
 function animateColorChange(element, hue, amount = 85, seconds = 2) {
 
@@ -412,4 +412,32 @@ function animateColorChange(element, hue, amount = 85, seconds = 2) {
 		};
 
 	}, ms);
+};
+
+function animateColorAll(sameHue = false) {
+
+	if (sameHue) {
+
+		circles.each(function() {
+			animateColorChange($(this), sameHue);
+		})
+
+	} else {
+
+		var rand;
+
+		circles.each(function() {
+
+			rand = getRandomInt(0, 2);
+
+			if (rand === 0) {
+				animateColorChange($(this), 'r');
+			} else if (rand === 1) {
+				animateColorChange($(this), 'g');
+			} else {
+				animateColorChange($(this), 'b');
+			}
+		});
+	};
+
 };
