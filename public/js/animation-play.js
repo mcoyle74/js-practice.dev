@@ -537,4 +537,41 @@ function scatteredRectangles(width = window.innerWidth) {
 	});
 };
 
-function 
+function thumbRectangles(width = window.innerWidth) {
+
+	scatteredRectangles(width);
+
+	circles.each(function(i) {
+
+		var clicked = false;
+
+		$(this).click(function() {
+
+			if (clicked) {
+				$(this).animate({
+					height: String((width / 2) * 0.75),
+					width: String(width / 2)
+				}).css({
+					'z-index': String((i - circles.length)),
+					'transform': 'rotate(' + getRandomInt(0, 45) + 'deg)'
+				});
+
+				clicked = false;
+
+			} else {
+
+				$(this).animate({
+					height: String((width * 0.9) * 0.75),
+					width: String(width * 0.9),
+					left: '5%',
+					top: '10%'
+				}).css({
+					'z-index': '999',
+					'transform': 'rotate(0deg)'
+				});
+
+				clicked = true;
+			}
+		});
+	});
+}
