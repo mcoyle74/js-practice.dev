@@ -519,7 +519,7 @@ function circularCluster(radius = 100, time = 400) {
 
 function scatteredRectangles(width = window.innerWidth) {
 
-	circles.each(function() {
+	circles.each(function(i) {
 
 		$(this).css({
 			'background-color': 'white',
@@ -532,5 +532,9 @@ function scatteredRectangles(width = window.innerWidth) {
 			'top': String(getRandomInt(100, 150) + 'px')
 		});
 
+		$(this).html('<h1 style="margin: 5%;">' + i + '</h1>');
+
 	});
 };
+
+function 
