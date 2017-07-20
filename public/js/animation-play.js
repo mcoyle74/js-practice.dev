@@ -517,3 +517,20 @@ function circularCluster(radius = 100, time = 400) {
 
 };
 
+function scatteredRectangles(width = window.innerWidth) {
+
+	circles.each(function() {
+
+		$(this).css({
+			'background-color': 'white',
+			'border-radius': '0',
+			'height': String((width / 2) * .75),
+			'width': String(width / 2),
+			'transform': 'rotate(' + getRandomInt(0, 45) + 'deg)',
+			'border': '1px solid #d0d0d0',
+			'left': String(getRandomInt(100, 150) + 'px'),
+			'top': String(getRandomInt(100, 150) + 'px')
+		});
+
+	});
+};
