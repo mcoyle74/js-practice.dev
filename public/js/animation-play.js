@@ -524,12 +524,12 @@ function scatteredRectangles(width = window.innerWidth) {
 		$(this).css({
 			'background-color': 'white',
 			'border-radius': '0',
-			'height': String((width / 2) * .75),
+			'height': String((width / 2) * 0.75),
 			'width': String(width / 2),
-			'transform': 'rotate(' + getRandomInt(0, 45) + 'deg)',
+			'transform': 'rotate(' + getRandomInt(10, 15) + 'deg)',
 			'border': '1px solid #d0d0d0',
-			'left': String(getRandomInt(100, 150) + 'px'),
-			'top': String(getRandomInt(100, 150) + 'px')
+			'left': ((i + 1) * getRandomInt(5, 7)) + '%',
+			'top': ((i + 1) * getRandomInt(6, 7)) + '%'
 		});
 
 		$(this).html('<h1 style="margin: 5%;">' + i + '</h1>');
@@ -549,27 +549,31 @@ function thumbRectangles(width = window.innerWidth) {
 
 			if (clicked) {
 				$(this).animate({
-					height: String((width / 2) * 0.75),
-					width: String(width / 2)
+					height: String((width * 0.6) * 0.75),
+					width: String(width * 0.6)
 				}).css({
-					'z-index': String((i - circles.length)),
-					'transform': 'rotate(' + getRandomInt(0, 45) + 'deg)'
+					'z-index': String(0 - i),
+					'transform': 'rotate(' + getRandomInt(7, 10) + 'deg)',
+					'left': ((i + 1) * getRandomInt(5, 6)) + '%',
+					'top': ((i + 1) * 10) + '%'
 				});
 
+				console.log($(this).css('z-index'));
 				clicked = false;
 
 			} else {
 
 				$(this).animate({
-					height: String((width * 0.9) * 0.75),
-					width: String(width * 0.9),
-					left: '5%',
-					top: '10%'
+					height: String(width * 0.75),
+					width: '100%',
+					left: '0',
+					top: '33%'
 				}).css({
 					'z-index': '999',
 					'transform': 'rotate(0deg)'
 				});
 
+				console.log($(this).css('z-index'));
 				clicked = true;
 			}
 		});
