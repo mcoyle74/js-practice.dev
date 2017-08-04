@@ -3,36 +3,37 @@ body {
 	margin: 0;
 }
 
-form {
-	position: relative;
-}
-
 label,
 input {
-	position: relative;
 	float: left;
 }
 
+button.clear {
+	display: block;
+	border: none;
+	background-color: #333;
+	color: #fff;
+	font-size: 1em;
+	padding: 10px 50px;
+	border-radius: 7px;
+}
+
 .container {
-	position: relative;
 	margin: 0 5vw;
 }
 
 .choices {
-	position: relative;
 	/*width: 10%;*/
 	float: left;
 }
 
 .digit-box {
-	position: relative;
 	float: left;
 	height: 60px;
 	width: 100px;
 }
 
 .digit {
-	position: relative;
 	float: left;
 	text-align: center;
 	font-size: 3em;
