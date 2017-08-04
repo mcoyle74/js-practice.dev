@@ -20,8 +20,16 @@ input {
 
 .choices {
 	position: relative;
-	width: 10%;
+	/*width: 10%;*/
 	float: left;
+}
+
+.digit {
+	position: relative;
+	float: left;
+	text-align: center;
+	font-size: 3em;
+	padding: 0 2%;
 }
 
 .clear {
