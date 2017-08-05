@@ -3,11 +3,6 @@ body {
 	margin: 0;
 }
 
-label,
-input {
-	float: left;
-}
-
 button.clear {
 	display: block;
 	border: none;
@@ -23,13 +18,55 @@ button.clear {
 }
 
 .choices {
-	/*width: 10%;*/
-	float: left;
+	list-style-type: none;
+	text-align: center;
+	margin: 0;
+}
+
+.choices li {
+	position: relative;
+	height: 20px;
+	width: 20px;
+	color: #000;
+	border-top: 1px solid #48f;
+	border-left: 1px solid #48f;
+	border-right: 1px solid #48f;
+}
+
+.choices li:last-child {
+	border-bottom: 1px solid #48f;
+}
+
+.choices label,
+.choices input {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.choices input[type="radio"] {
+	opacity: 0;
+	z-index: 100;
+}
+
+.choices input[type="radio"]:checked + label {
+	background-color: #48f;
+	color: #fff;
+}
+
+.choices label {
+	background-color: #ddd;
+	padding: 3px;
+	cursor: pointer;
+	z-index: 90;
 }
 
 .digit-box {
 	float: left;
-	height: 60px;
+	height: 70px;
 	width: 100px;
 }
 
