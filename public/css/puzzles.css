@@ -3,8 +3,9 @@ body {
 	margin: 0;
 }
 
-ul {
-	padding-top: 3px;
+form {
+	margin: auto;
+	max-width: 600px;
 }
 
 button.clear {
@@ -16,11 +17,12 @@ button.clear {
 	padding: 10px 50px;
 	border-radius: 7px;
 	position: relative;
-	top: 25px;
+	top: 7px;
+	margin: auto;
 }
 
 .container {
-	margin: 0 5vw;
+	margin: 0 7.5vw;
 }
 
 .choices {
@@ -37,7 +39,8 @@ button.clear {
 	border-top: 1px solid #48f;
 	border-left: 1px solid #48f;
 	border-right: 1px solid #48f;
-	padding-bottom: 3px;
+	padding: 2px;
+	margin-left: 2px;
 }
 
 .choices li:first-child {
@@ -91,6 +94,7 @@ button.clear {
 	float: left;
 	height: 55px;
 	width: 65px;
+	margin: 0 5px 10px 0;
 }
 
 .digit {
