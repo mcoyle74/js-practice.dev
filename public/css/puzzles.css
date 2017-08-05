@@ -3,9 +3,14 @@ body {
 	margin: 0;
 }
 
-form {
-	margin: auto;
+header {
 	max-width: 600px;
+	margin: auto;
+}
+
+form {
+	max-width: 600px;
+	margin: auto;
 }
 
 button.clear {
@@ -22,7 +27,7 @@ button.clear {
 }
 
 .container {
-	margin: 0 7.5vw;
+	margin: 0 5vw;
 }
 
 .choices {
