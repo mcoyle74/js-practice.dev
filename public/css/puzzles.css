@@ -91,7 +91,7 @@ button#calc {
 .digit-box {
 	height: 55px;
 	max-width: 600px;
-	margin: 0 5px 10px 0;
+	margin-bottom: 20px;
 }
 
 .digit {
