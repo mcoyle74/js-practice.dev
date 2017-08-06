@@ -13,16 +13,12 @@ main {
 	margin: auto;
 }
 
-button#calc {
-	display: block;
-	border: none;
-	background-color: #225ecc;
-	color: #f0f0f0;
-	font-size: 1em;
-	height: 40px;
-	width: 120px;
-	margin: 0;
-	border-radius: 7px;
+form {
+	text-align: center;
+}
+
+input {
+	position: relative;
 }
 
 .container {
@@ -32,21 +28,22 @@ button#calc {
 .choices {
 	list-style-type: none;
 	text-align: center;
-	width: 320px;
+	min-height: 37px;
+	width: 100%;
 	padding: 0;
-	margin: auto;
+	margin: 0 auto 3px auto;
 }
 
 .choices li {
 	position: relative;
 	float: left;
-	height: 38px;
-	width: 60px;
+	height: 35px;
+	width: 32.5%;
 	color: #000;
 	border-top: 1px solid #39f;
 	border-left: 1px solid #39f;
 	border-bottom: 1px solid #39f;
-	line-height: 38px;
+	line-height: 35px;
 }
 
 .choices li:first-child {
@@ -89,24 +86,26 @@ button#calc {
 }
 
 .digit-box {
-	height: 55px;
+	min-height: 35px;
 	max-width: 600px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
+}
+
+.digit,
+.operand {
+	font-size: 1.5em;
+	text-align: center;
+	height: 30px;
+	border: none;
+	padding: 0;
 }
 
 .digit {
-	float: left;
-	text-align: center;
-	font-size: 3em;
-	height: 55px;
-	width: 65px;
+	width: 25px;
 }
 
 .operand {
-	display: none;
-	float: left;
-	font-size: 3em;
-	opacity: 1;
+	width: 20px;
 }
 
 .clear {
@@ -114,7 +113,18 @@ button#calc {
 }
 
 .underlined {
-	border-bottom: 4px solid #39f;
+	border-bottom: 3px solid #39f;
+}
+
+button#set-op {
+	border: none;
+	background-color: #225ecc;
+	color: #f0f0f0;
+	font-size: 1em;
+	height: 40px;
+	width: 100%;
+	margin: 0;
+	border-radius: 7px;
 }
 
 label[for="concat"] {
@@ -125,4 +135,15 @@ label[for="concat"] {
 label[for="minus"] {
 	border-top-right-radius: 6px;
 	border-bottom-right-radius: 6px;
+}
+
+@media (min-width: 768px) {
+	.digit {
+		height: 56px;
+		width: 48px;
+		font-size: 3em;
+	}
+
+	button#calc {
+	}
 }

@@ -23,34 +23,26 @@
 	</header>
 
 	<main>
-			<div class="digit-box">
-				<div class="digit underlined">1</div>
-				<div class="operand" id="plus-0">&plus;</div>
-				<div class="operand" id="minus-0">&minus;</div>
-				<div class="digit underlined">2</div>
-				<div class="operand" id="plus-1">&plus;</div>
-				<div class="operand" id="minus-1">&minus;</div>
-				<div class="digit">3</div>
-				<div class="operand" id="plus-2">&plus;</div>
-				<div class="operand" id="minus-2">&minus;</div>
-				<div class="digit">4</div>
-				<div class="operand" id="plus-3">&plus;</div>
-				<div class="operand" id="minus-3">&minus;</div>
-				<div class="digit">5</div>
-				<div class="operand" id="plus-4">&plus;</div>
-				<div class="operand" id="minus-4">&minus;</div>
-				<div class="digit">6</div>
-				<div class="operand" id="plus-5">&plus;</div>
-				<div class="operand" id="minus-5">&minus;</div>
-				<div class="digit">7</div>
-				<div class="operand" id="plus-6">&plus;</div>
-				<div class="operand" id="minus-6">&minus;</div>
-				<div class="digit">8</div>
-				<div class="operand" id="plus-7">&plus;</div>
-				<div class="operand" id="minus-7">&minus;</div>
-				<div class="digit">9</div>
-			</div>
 		<form action="">
+			<div class="digit-box">
+				<input type="text" class="digit" name="" value="1" readonly>
+				<input type="text" class="operand underlined" name="op-1" value="">
+				<input type="text" class="digit" name="" value="2" readonly>
+				<input type="text" class="operand" name="op-2" value="">
+				<input type="text" class="digit" name="" value="3" readonly>
+				<input type="text" class="operand" name="op-3" value="">
+				<input type="text" class="digit" name="" value="4" readonly>
+				<input type="text" class="operand" name="op-4" value="">
+				<input type="text" class="digit" name="" value="5" readonly>
+				<input type="text" class="operand" name="op-5" value="">
+				<input type="text" class="digit" name="" value="6" readonly>
+				<input type="text" class="operand" name="op-6" value="">
+				<input type="text" class="digit" name="" value="7" readonly>
+				<input type="text" class="operand" name="op-7" value="">
+				<input type="text" class="digit" name="" value="8" readonly>
+				<input type="text" class="operand" name="op-8" value="">
+				<input type="text" class="digit" name="" value="9" readonly>
+			</div>
 			<ul class="choices">
 				<li>
 					<input id="concat" type="radio" name="operand" value="concat" checked>
@@ -65,7 +57,7 @@
 					<label for="minus">&minus;</label>
 				</li>
 			</ul>
-			<button id="calc" type="submit">Submit</button>
+			<button id="set-op" type="submit">Submit</button>
 		</form>
 	</main>
 
