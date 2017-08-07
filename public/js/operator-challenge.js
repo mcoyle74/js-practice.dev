@@ -16,11 +16,11 @@ function insertOperator(index, op) {
 
 		inputs.eq(index).animate({
 			width: '0'
-		}, 1200);
+		}, 500);
 
 		inputs.slice(index + 1).animate({
 			left: '-=12'
-		}, 1200);
+		}, 500);
 
 	}
 
