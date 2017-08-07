@@ -15,38 +15,39 @@
 		<h1>Operator Interpolation</h1>
 
 		<p>
-			You're given a string of digits, &ldquo;123456789.&rdquo; By inserting a <strong>&plus;</strong> or <strong>&minus;</strong> operator between or by concatenating the digits, how many expressions can be made that evaluate to 100?
+			Given a sequence of digits, 1-9, and a choice of inserting a <strong>&plus;</strong> or <strong>&minus;</strong> operator between the digits or concatenating them, how many expressions can be made that evaluate to 100?
 		</p>
 		<p>
-			Use the radio buttons below to make your choices and press Submit to see the results.
+			Use the buttons below to make your choices: <strong>&larr;</strong> for concatenation, or a <strong>&plus;</strong> or <strong>&minus;</strong> operator. Press the Calculate button to see the results.
 		</p>
 	</header>
 
 	<main>
 		<div class="digit-box">
-			<input type="text" class="digit" name="" value="1" readonly>
+			<input type="text" class="digit" value="1" readonly>
 			<input type="text" class="operator underlined" name="op-1" value="">
-			<input type="text" class="digit" name="" value="2" readonly>
+			<input type="text" class="digit" value="2" readonly>
 			<input type="text" class="operator" name="op-2" value="">
-			<input type="text" class="digit" name="" value="3" readonly>
+			<input type="text" class="digit" value="3" readonly>
 			<input type="text" class="operator" name="op-3" value="">
-			<input type="text" class="digit" name="" value="4" readonly>
+			<input type="text" class="digit" value="4" readonly>
 			<input type="text" class="operator" name="op-4" value="">
-			<input type="text" class="digit" name="" value="5" readonly>
+			<input type="text" class="digit" value="5" readonly>
 			<input type="text" class="operator" name="op-5" value="">
-			<input type="text" class="digit" name="" value="6" readonly>
+			<input type="text" class="digit" value="6" readonly>
 			<input type="text" class="operator" name="op-6" value="">
-			<input type="text" class="digit" name="" value="7" readonly>
+			<input type="text" class="digit" value="7" readonly>
 			<input type="text" class="operator" name="op-7" value="">
-			<input type="text" class="digit" name="" value="8" readonly>
+			<input type="text" class="digit" value="8" readonly>
 			<input type="text" class="operator" name="op-8" value="">
-			<input type="text" class="digit" name="" value="9" readonly>
+			<input type="text" class="digit" value="9" readonly>
 		</div>
 		<div class="choices">
 			<button id="concat" type="button" name="concat" value="concat">&larr;</button>
 			<button id="plus" type="button" name="plus" value="+">&plus;</button>
 			<button id="minus" type="button" name="minus" value="-">&minus;</button>
 		</div>
+		<button id="calculate" type="button" name="calculate">Calculate</button>
 		<button id="reset" type="button" name="reset">Reset</button>
 	</main>
 
