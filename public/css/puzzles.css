@@ -46,7 +46,7 @@ form {
 }
 
 .digit,
-.operand {
+.operator {
 	position: relative;
 	font-family: 'Lucida Console', monospace;
 	font-size: 3em;
@@ -60,7 +60,7 @@ form {
 	width: 30px;
 }
 
-.operand {
+.operator {
 	width: 28px;
 }
 
