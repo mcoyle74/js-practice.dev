@@ -4,6 +4,31 @@
 // that total 100 by inserting a '+', '-' or '' between the 
 // digits. Example: 123 + 45 - 67 + 8 - 9 = 100
 
+function insertOperator(index, op) {
+
+	inputs.eq(index).removeClass('underlined');
+
+	if (op === '+') {
+		inputs.eq(index).attr('value', String.fromCharCode(43));
+	} else if (op === '-') {
+		inputs.eq(index).attr('value', String.fromCharCode(8722));
+	} else {
+
+		inputs.eq(index).animate({
+			width: '0'
+		}, 1200);
+
+		inputs.slice(index + 1).animate({
+			left: '-=12'
+		}, 1200);
+
+	}
+
+	inputs.eq(index + 2).addClass(
+		'underlined'
+	);
+}
+
 var ternaries = [],
 	expressions = [],
 	ternary,
