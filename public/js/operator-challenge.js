@@ -31,7 +31,8 @@ function insertOperator(index, op) {
 
 $(document).ready(function() {
 
-	var concatBtn = $('#concat'),
+	var opWidth = inputs.filter('.operator').css('width'),
+		concatBtn = $('#concat'),
 		plusBtn = $('#plus'),
 		minusBtn = $('#minus'),
 		resetBtn = $('#reset'),
@@ -50,6 +51,13 @@ $(document).ready(function() {
 	minusBtn.click(function() {
 		insertOperator(index, '-');
 		index += 2;
+	});
+
+	resetBtn.click(function() {
+		inputs.removeAttr('style');
+		ops.removeAttr('value');
+		ops.slice(1).removeClass('underlined');
+		ops.first().addClass('underlined');
 	});
 
 });
