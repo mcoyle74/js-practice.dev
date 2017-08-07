@@ -43,21 +43,12 @@
 				<input type="text" class="operand" name="op-8" value="">
 				<input type="text" class="digit" name="" value="9" readonly>
 			</div>
-			<ul class="choices">
-				<li>
-					<input id="concat" type="radio" name="operand" value="concat" checked>
-					<label for="concat">&larr;</label>
-				</li>
-				<li>
-					<input id="plus" type="radio" name="operand" value="+">
-					<label for="plus">&plus;</label>
-				</li>
-				<li>
-					<input id="minus" type="radio" name="operand" value="-">
-					<label for="minus">&minus;</label>
-				</li>
-			</ul>
-			<button id="set-op" type="submit">Submit</button>
+			<div class="choices">
+				<button type="submit" name="concat" value="concat">&larr;</button>
+				<button type="submit" name="plus" value="+">&plus;</button>
+				<button type="submit" name="minus" value="-">&minus;</button>
+			</div>
+			<button type="submit" name="reset">Reset</button>
 		</form>
 	</main>
 

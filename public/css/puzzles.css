@@ -17,95 +17,49 @@ form {
 	text-align: center;
 }
 
-input {
-	position: relative;
-}
-
 .container {
 	margin: 0 5vw;
 }
 
 .choices {
-	list-style-type: none;
 	text-align: center;
-	min-height: 37px;
+	min-height: 36px;
 	width: 100%;
 	padding: 0;
-	margin: 0 auto 3px auto;
+	margin: 0 auto 7px auto;
 }
 
-.choices li {
-	position: relative;
-	float: left;
-	height: 35px;
-	width: 32.5%;
-	color: #000;
-	border-top: 1px solid #39f;
-	border-left: 1px solid #39f;
-	border-bottom: 1px solid #39f;
-	line-height: 35px;
-}
-
-.choices li:first-child {
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
-}
-
-.choices li:last-child {
-	border-right: 1px solid #39f;
-	border-top-right-radius: 7px;
-	border-bottom-right-radius: 7px;
-	margin-right: 3px;
-}
-
-.choices label,
-.choices input {
-	display: block;
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	font-size: 1.5em;
-}
-
-.choices input[type="radio"] {
-	opacity: 0;
-	z-index: 100;
-}
-
-.choices input[type="radio"]:checked + label {
-	background-color: #39f;
+.choices button {
+	height: 36px;
+	width: 32%;
+	font-size: 1.35em;
 	color: #fff;
-}
-
-.choices label {
-	background-color: #ddd;
-	cursor: pointer;
-	z-index: 90;
+	background-color: #39f;
+	border: none;
+	border-radius: 7px;
 }
 
 .digit-box {
-	min-height: 35px;
+	min-height: 40px;
 	max-width: 600px;
 	margin-bottom: 10px;
 }
 
 .digit,
 .operand {
-	font-size: 1.5em;
+	font-size: 3em;
 	text-align: center;
-	height: 30px;
+	height: 40px;
 	border: none;
 	padding: 0;
 }
 
 .digit {
-	width: 25px;
+	width: 30px;
 }
 
 .operand {
-	width: 20px;
+	width: 28px;
 }
 
 .clear {
@@ -116,34 +70,26 @@ input {
 	border-bottom: 3px solid #39f;
 }
 
-button#set-op {
+button[name="reset"] {
 	border: none;
 	background-color: #225ecc;
-	color: #f0f0f0;
-	font-size: 1em;
-	height: 40px;
+	color: #fff;
+	font-size: 1.15em;
+	height: 36px;
 	width: 100%;
-	margin: 0;
 	border-radius: 7px;
 }
 
-label[for="concat"] {
-	border-top-left-radius: 6px;
-	border-bottom-left-radius: 6px;
-}
-
-label[for="minus"] {
-	border-top-right-radius: 6px;
-	border-bottom-right-radius: 6px;
-}
-
-@media (min-width: 768px) {
-	.digit {
-		height: 56px;
-		width: 48px;
-		font-size: 3em;
+@media (min-width: 768px), (orientation: landscape) {
+	.choices {
+		width: 50%;
 	}
 
-	button#calc {
+	.underlined {
+		border-bottom: 4px solid #39f;
+	}
+
+	button[name="reset"] {
+		width: 50%;
 	}
 }
