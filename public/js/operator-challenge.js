@@ -29,7 +29,35 @@ function insertOperator(index, op) {
 	);
 }
 
-var ternaries = [],
+$(document).ready(function() {
+
+	var concatBtn = $('#concat'),
+		plusBtn = $('#plus'),
+		minusBtn = $('#minus'),
+		resetBtn = $('#reset'),
+		index = 1;
+
+	concatBtn.click(function() {
+		insertOperator(index, 'concat');
+		index += 2;
+	});
+
+	plusBtn.click(function() {
+		insertOperator(index, '+');
+		index += 2;
+	});
+
+	minusBtn.click(function() {
+		insertOperator(index, '-');
+		index += 2;
+	});
+
+});
+
+var digits = $('.digit'),
+	inputs = $('input'),
+	ops = $('.operator'),
+	ternaries = [],
 	expressions = [],
 	ternary,
 	expression,
