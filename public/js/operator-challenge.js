@@ -58,6 +58,7 @@ $(document).ready(function() {
 		ops.removeAttr('value');
 		ops.slice(1).removeClass('underlined');
 		ops.first().addClass('underlined');
+		index = 1;
 	});
 
 });
