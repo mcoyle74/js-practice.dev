@@ -2,6 +2,8 @@
 
 function formatDuration(seconds) {
 
+	if (seconds === 0) return 'now';
+
 	const MINUTE = 60,
     	HOUR = MINUTE * 60,
 		DAY = HOUR * 24,
