@@ -37,3 +37,15 @@ function factorial(n) {
 
 	return product;
 }
+
+function factorize(n) {
+
+	let factors = [],
+		half = n / 2;
+
+	for (let i = 2; i <= half; i++) {
+		if (n % i == 0) factors.push(i);
+	}
+
+	return factors;
+}
