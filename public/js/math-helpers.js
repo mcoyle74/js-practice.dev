@@ -20,3 +20,22 @@ function isPrime(n) {
 
 	return true;
 }
+
+function factorial(n) {
+
+	if (!Number.isInteger(n)) {
+		throw new TypeError('argument must be an integer');
+	} else if (n < 0) {
+		throw new RangeError('argument must be nonnegative')
+	} else if (n == 0) {
+		return 1;
+	}
+
+	let product = 1;
+
+	for (let i = n; i > 1; i--) {
+		product *= i;
+	}
+
+	return product;
+}
