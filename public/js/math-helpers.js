@@ -58,3 +58,24 @@ function factorize(n) {
 
 	return factors;
 }
+
+function primeFactors(n) {
+
+	let factors = [];
+
+	while (n % 2 == 0) {
+		factors.push(2);
+		n /= 2;
+	}
+
+	for (let i = 3; i <= n; i += 2) {
+
+		while (n % i == 0) {
+			factors.push(i);
+			n /= i;
+		}
+
+	}
+
+	return factors;
+}
