@@ -40,6 +40,12 @@ function factorial(n) {
 
 function factorize(n) {
 
+	if (!Number.isInteger(n)) {
+		throw new TypeError('argument must be an integer');
+	} else if (n < 0) {
+		throw new RangeError('argument must be nonnegative')
+	}
+
 	let factors = [],
 		nSqrt = Math.sqrt(n),
 		index;
@@ -60,6 +66,12 @@ function factorize(n) {
 }
 
 function primeFactors(n) {
+
+	if (!Number.isInteger(n)) {
+		throw new TypeError('argument must be an integer');
+	} else if (n < 2) {
+		throw new RangeError('argument must be an integer > 1')
+	}
 
 	let factors = [];
 
