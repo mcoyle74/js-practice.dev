@@ -91,3 +91,18 @@ function primeFactors(n) {
 
 	return factors;
 }
+
+// greatest common divisor
+function gcd(int1, int2) {
+
+	let greater = Math.max(int1, int2),
+		lesser = Math.min(int1, int2);
+
+	for (let i = lesser; i > 1; i--) {
+		if (greater % i == 0 && lesser % i == 0) {
+			return i;
+		}
+	}
+
+	return 1;
+}
