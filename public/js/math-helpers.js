@@ -106,3 +106,7 @@ function gcd(int1, int2) {
 
 	return 1;
 }
+
+function percentError(experimental, theoretical) {
+	return (Math.abs(experimental - theoretical) / theoretical) * 100;
+}
