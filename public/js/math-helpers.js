@@ -110,3 +110,14 @@ function gcd(int1, int2) {
 function percentError(experimental, theoretical) {
 	return (Math.abs(experimental - theoretical) / theoretical) * 100;
 }
+
+function sumDigits(integer) {
+
+	if (!Number.isInteger(integer)) {
+		throw new TypeError('argument must be an integer');
+	}
+	
+	return Math.abs(integer).toString().split('').reduce((a, b) => {
+		return (+a) + (+b);
+	});
+}
