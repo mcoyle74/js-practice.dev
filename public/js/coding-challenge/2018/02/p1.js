@@ -10,3 +10,23 @@
 		input: 'two toads talking'
 		output 'talking' 
 */
+
+function highestScoringWord(str) {
+
+	let words = str.split(' '),
+		wordScores = [],
+		score;
+
+	words.forEach(word => {
+
+		score = 0;
+
+		for (let i = 0; i < word.length; i++) {
+			score += word.charCodeAt(i) - 96; // char code of 'a' = 97
+		}
+
+		wordScores.push(score);
+	});
+
+	return words[wordScores.indexOf(Math.max(...wordScores))];
+}
