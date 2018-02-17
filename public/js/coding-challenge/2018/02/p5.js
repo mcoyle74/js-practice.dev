@@ -31,31 +31,47 @@ function humanReadableDuration(seconds) {
 		years = '';
 
 	if (seconds >= YEAR) {
-		years = Math.floor(seconds / YEAR) + ' years';
+
+		years = Math.floor(seconds / YEAR) + ' year';
+		if (Math.floor(seconds / YEAR) > 1) years += 's';
+
 		seconds %= YEAR;
 		if (seconds > 0) years += ', ';
+
 	}
 
 	if (seconds >= DAY) {
-		days = Math.floor(seconds / DAY) + ' days';
+
+		days = Math.floor(seconds / DAY) + ' day';
+		if (Math.floor(seconds / DAY) > 1) days += 's';
+
 		seconds %= DAY;
 		if (seconds > 0) days += ', ';
+
 	}
 
 	if (seconds >= HR) {
-		hours = Math.floor(seconds / HR) + ' hours';
+
+		hours = Math.floor(seconds / HR) + ' hour';
+		if (Math.floor(seconds / HR) > 1) hours += 's';
+
 		seconds %= HR;
 		if (seconds > 0) hours += ', ';
+
 	}
 
 	if (seconds >= MIN) {
-		minutes = Math.floor(seconds / MIN) + ' minutes';
+
+		minutes = Math.floor(seconds / MIN) + ' minute';
+		if (Math.floor(seconds / MIN) > 1) minutes += 's';
+
 		seconds %= MIN;
 		if (seconds > 0) minutes += ', ';
+
 	}
 
 	if (seconds > 0) {
-		seconds += ' seconds';
+		seconds += seconds > 1 ? ' seconds' : ' second';
 	} else {
 		seconds = '';
 	}
