@@ -25,37 +25,33 @@ function humanReadableDuration(seconds) {
 		DAY = 24 * HR,
 		YEAR = 365 * DAY;
 
-	let minutes,
-		hours,
-		days,
-		years;
-
-	if (seconds > YEAR) {
-		years = Math.floor(seconds / YEAR) + ' years, ';
-		seconds %= YEAR;
-	} else {
+	let minutes = '',
+		hours = '',
+		days = '',
 		years = '';
+
+	if (seconds >= YEAR) {
+		years = Math.floor(seconds / YEAR) + ' years';
+		seconds %= YEAR;
+		if (seconds > 0) years += ', ';
 	}
 
-	if (seconds > DAY) {
-		days = Math.floor(seconds / DAY) + ' days, ';
+	if (seconds >= DAY) {
+		days = Math.floor(seconds / DAY) + ' days';
 		seconds %= DAY;
-	} else {
-		days = '';
+		if (seconds > 0) days += ', ';
 	}
 
-	if (seconds > HR) {
-		hours = Math.floor(seconds / HR) + ' hours, ';
+	if (seconds >= HR) {
+		hours = Math.floor(seconds / HR) + ' hours';
 		seconds %= HR;
-	} else {
-		hours = '';
+		if (seconds > 0) hours += ', ';
 	}
 
-	if (seconds > MIN) {
-		minutes = Math.floor(seconds / MIN) + ' minutes, ';
+	if (seconds >= MIN) {
+		minutes = Math.floor(seconds / MIN) + ' minutes';
 		seconds %= MIN;
-	} else {
-		minutes = '';
+		if (seconds > 0) minutes += ', ';
 	}
 
 	if (seconds > 0) {
