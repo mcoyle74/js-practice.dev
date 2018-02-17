@@ -15,3 +15,54 @@
 		output: 2688 years, 56 days, 18 hours, 15 minutes and 23 seconds
 
 */
+
+function humanReadableDuration(seconds) {
+
+	if (seconds == 0) return 'now';
+
+	const MIN = 60,
+		HR = 60 * MIN,
+		DAY = 24 * HR,
+		YEAR = 365 * DAY;
+
+	let minutes,
+		hours,
+		days,
+		years;
+
+	if (seconds > YEAR) {
+		years = Math.floor(seconds / YEAR) + ' years, ';
+		seconds %= YEAR;
+	} else {
+		years = '';
+	}
+
+	if (seconds > DAY) {
+		days = Math.floor(seconds / DAY) + ' days, ';
+		seconds %= DAY;
+	} else {
+		days = '';
+	}
+
+	if (seconds > HR) {
+		hours = Math.floor(seconds / HR) + ' hours, ';
+		seconds %= HR;
+	} else {
+		hours = '';
+	}
+
+	if (seconds > MIN) {
+		minutes = Math.floor(seconds / MIN) + ' minutes, ';
+		seconds %= MIN;
+	} else {
+		minutes = '';
+	}
+
+	if (seconds > 0) {
+		seconds += ' seconds';
+	} else {
+		seconds = '';
+	}
+
+	return `${years}${days}${hours}${minutes}${seconds}`;
+}
