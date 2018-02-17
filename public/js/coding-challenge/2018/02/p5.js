@@ -76,5 +76,5 @@ function humanReadableDuration(seconds) {
 		seconds = '';
 	}
 
-	return `${years}${days}${hours}${minutes}${seconds}`;
+	return (years + days + hours + minutes + seconds).replace(/, (?!.*, )/, ' and ');
 }
