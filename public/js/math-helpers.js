@@ -3,8 +3,6 @@
 function isPrime(int) {
 	if (!Number.isInteger(int)) {
 		throw new TypeError('argument must be an integer');
-	} else if (int < 2) {
-		return false;
 	} else if (int == 2) {
 		return true;
 	} else if (int % 2 == 0) {
@@ -17,7 +15,7 @@ function isPrime(int) {
 		if (int % i == 0) return false;
 	}
 
-	return true;
+	return int > 1;
 }
 
 function factorial(int) {
