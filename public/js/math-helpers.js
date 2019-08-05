@@ -11,9 +11,9 @@ function isPrime(int) {
 		return false;
 	}
 
-	let nSqrt = Math.sqrt(int);
+	const SQRT = Math.sqrt(int);
 
-	for (let i = 3; i <= nSqrt; i += 2) {
+	for (let i = 3; i <= SQRT; i += 2) {
 		if (int % i == 0) return false;
 	}
 
@@ -44,16 +44,17 @@ function factorize(int) {
 	}
 
 	let factors = [],
-		nSqrt = Math.sqrt(int),
 		index;
 
-	for (let i = 2; i < nSqrt; i++) {
+	const SQRT = Math.sqrt(int);
+
+	for (let i = 2; i < SQRT; i++) {
 		if (int % i == 0) factors.push(i);
 	}
 
 	index = factors.length - 1;
 
-	if (Number.isInteger(nSqrt)) factors.push(nSqrt);
+	if (Number.isInteger(SQRT)) factors.push(SQRT);
 
 	for (let i = index; i >= 0; i--) {
 		factors.push(int / factors[i]);
@@ -71,18 +72,22 @@ function primeFactors(int) {
 
 	let factors = [];
 
+	const SQRT = Math.sqrt(int);
+
 	while (int % 2 == 0) {
 		factors.push(2);
 		int /= 2;
 	}
 
 	for (let i = 3; i <= int; i += 2) {
-
 		while (int % i == 0) {
 			factors.push(i);
 			int /= i;
 		}
 
+		if (i >= SQRT && factors.length == 0) {
+			break;
+		}
 	}
 
 	return factors;
