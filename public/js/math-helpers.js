@@ -1,57 +1,54 @@
 "use strict";
 
-function isPrime(n) {
-
-	if (!Number.isInteger(n)) {
+function isPrime(int) {
+	if (!Number.isInteger(int)) {
 		throw new TypeError('argument must be an integer');
-	} else if (n < 2) {
+	} else if (int < 2) {
 		return false;
-	} else if (n == 2) {
+	} else if (int == 2) {
 		return true;
-	} else if (n % 2 == 0) {
+	} else if (int % 2 == 0) {
 		return false;
 	}
 
-	let nSqrt = Math.sqrt(n);
+	let nSqrt = Math.sqrt(int);
 
 	for (let i = 3; i <= nSqrt; i += 2) {
-		if (n % i == 0) return false;
+		if (int % i == 0) return false;
 	}
 
 	return true;
 }
 
-function factorial(n) {
-
-	if (!Number.isInteger(n)) {
+function factorial(int) {
+	if (!Number.isInteger(int)) {
 		throw new TypeError('argument must be an integer');
-	} else if (n < 0) {
+	} else if (int < 0) {
 		throw new RangeError('argument must be nonnegative')
 	}
 
 	let product = 1;
 
-	for (let i = n; i > 1; i--) {
+	for (let i = int; i > 1; i--) {
 		product *= i;
 	}
 
 	return product;
 }
 
-function factorize(n) {
-
-	if (!Number.isInteger(n)) {
+function factorize(int) {
+	if (!Number.isInteger(int)) {
 		throw new TypeError('argument must be an integer');
-	} else if (n < 0) {
+	} else if (int < 0) {
 		throw new RangeError('argument must be nonnegative')
 	}
 
 	let factors = [],
-		nSqrt = Math.sqrt(n),
+		nSqrt = Math.sqrt(int),
 		index;
 
 	for (let i = 2; i < nSqrt; i++) {
-		if (n % i == 0) factors.push(i);
+		if (int % i == 0) factors.push(i);
 	}
 
 	index = factors.length - 1;
@@ -59,32 +56,31 @@ function factorize(n) {
 	if (Number.isInteger(nSqrt)) factors.push(nSqrt);
 
 	for (let i = index; i >= 0; i--) {
-		factors.push(n / factors[i]);
+		factors.push(int / factors[i]);
 	}
 
 	return factors;
 }
 
-function primeFactors(n) {
-
-	if (!Number.isInteger(n)) {
+function primeFactors(int) {
+	if (!Number.isInteger(int)) {
 		throw new TypeError('argument must be an integer');
-	} else if (n < 2) {
+	} else if (int < 2) {
 		throw new RangeError('argument must be an integer > 1')
 	}
 
 	let factors = [];
 
-	while (n % 2 == 0) {
+	while (int % 2 == 0) {
 		factors.push(2);
-		n /= 2;
+		int /= 2;
 	}
 
-	for (let i = 3; i <= n; i += 2) {
+	for (let i = 3; i <= int; i += 2) {
 
-		while (n % i == 0) {
+		while (int % i == 0) {
 			factors.push(i);
-			n /= i;
+			int /= i;
 		}
 
 	}
@@ -94,7 +90,6 @@ function primeFactors(n) {
 
 // greatest common divisor
 function gcd(int1, int2) {
-
 	let greater = Math.max(int1, int2),
 		lesser = Math.min(int1, int2);
 
@@ -112,11 +107,10 @@ function percentError(experimental, theoretical) {
 }
 
 function sumDigits(integer) {
-
 	if (!Number.isInteger(integer)) {
 		throw new TypeError('argument must be an integer');
 	}
-	
+
 	return Math.abs(integer).toString().split('').reduce((a, b) => {
 		return (+a) + (+b);
 	});
